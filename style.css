@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #0ca4e4 0%, #0880b8 100%);
+    min-height: 100vh;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+}
+
+.format-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.format-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.format-selector .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: normal;
+}
+
+.format-selector .radio-option:hover {
+    background: #e9ecef;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: normal;
+}
+
+.radio-option:hover {
+    background: #e9ecef;
+}
+
+.radio-option input[type="radio"] {
+    cursor: pointer;
+}
+
+.radio-option span {
+    color: #555;
+}
+
+select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+select:hover, select:focus {
+    border-color: #0ca4e4;
+    outline: none;
+}
+
+button {
+    padding: 12px 24px;
+    background: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background: #e68a00;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.result {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    /* margin-bottom: 30px; */
+}
+
+.result.hidden {
+    display: none;
+}
+
+.password-display {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#passwordOutput {
+    flex: 1;
+    padding: 12px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+}
+
+#copyBtn {
+    padding: 12px 20px;
+    background: #28a745;
+}
+
+#copyBtn:hover {
+    background: #218838;
+}
+
+#copyBtn.copied {
+    background: #1e7e34;
+}
+
+.strength-info {
+    margin-top: 15px;
+}
+
+.score-display {
+    margin-bottom: 10px;
+}
+
+.score-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.score-bar-fill {
+    height: 100%;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.score-0 { background-color: #d32f2f; }
+.score-1 { background-color: #f57c00; }
+.score-2 { background-color: #fbc02d; }
+.score-3 { background-color: #7cb342; }
+.score-4 { background-color: #388e3c; }
+
+#feedback {
+    margin-top: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+.info {
+    background: #e6f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #0ca4e4;
+}
+
+.info h3 {
+    color: #0ca4e4;
+    margin-bottom: 10px;
+}
+
+.info ul {
+    margin-left: 20px;
+    color: #555;
+}
+
+.info li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.about {
+    background: #fff4e6;
+    padding: 40px 20px;
+    margin-top: 20px;
+    width: 100vw;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.about-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about h3 {
+    color: #ff9900;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.about p:last-child {
+    margin-bottom: 0;
+}
