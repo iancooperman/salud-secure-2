@@ -6,4 +6,4 @@ The requirement that new passwords must not be "common" left many feeling anxiou
 SaludSecure saves the day by generating passwords that are guaranteed to not result in any red Xs, while still being straightforward enough to remember. And, with a bit of luck, even the most digitally-challenged individuals can use them with ease.
 
 ### Disclaimer
-This project has been (mostly) vibecoded. It was created as a personal test of Claude Code's capabilities and is not meant to be reflective of iancooperman's (my) programming abilities.
+This project has been (mostly) vibecoded. It was created as a personal test of Claude Code's capabilities and is not meant to be a statement on iancooperman's (my) programming abilities.
