@@ -31,6 +31,9 @@ const symbols = ['!', '@', '#', '$', '%', '&', '*', '+', '=', '?'];
 // Minimum acceptable zxcvbn score (3 = safely unguessable)
 const MIN_SCORE = 3;
 
+// Debug flag
+let DEBUG = false;
+
 // Generate a password in the specified format
 function generateSimplePassword(format = 'full') {
     const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
@@ -58,6 +61,9 @@ function findSimplePassword(format = 'full') {
         const result = zxcvbn(password);
 
         if (result.score >= MIN_SCORE) {
+            if (DEBUG) {
+                console.info(`Password generated after ${attempt + 1} attempts`);
+            }
             return { password, result };
         }
     }
@@ -66,7 +72,10 @@ function findSimplePassword(format = 'full') {
     // Return the last attempt anyway with a warning
     const fallbackPassword = generateSimplePassword(format);
     const fallbackResult = zxcvbn(fallbackPassword);
-    console.warn('Could not generate password meeting minimum score after 1000 attempts');
+    if (DEBUG) {
+        console.warn('Could not generate password meeting minimum score after 1000 attempts');
+    }
+    
     return { password: fallbackPassword, result: fallbackResult };
 }
 
