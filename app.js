@@ -39,10 +39,11 @@ function generateSimplePassword(format = 'full') {
     const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
     const noun = nouns[Math.floor(Math.random() * nouns.length)];
     const digit = Math.floor(Math.random() * 10);
+    const digit2 = Math.floor(Math.random() * 10);
 
     if (format === 'simple') {
-        // adjectivenoun[digit] format (all lowercase)
-        return adjective + noun + digit;
+        // adjectivenoun[digit][digit2] format (all lowercase)
+        return adjective + noun + digit + digit2;
     } else {
         // AdjectiveNoun[digit][symbol] format (capitalized)
         const capitalizedAdjective = adjective.charAt(0).toUpperCase() + adjective.slice(1);
